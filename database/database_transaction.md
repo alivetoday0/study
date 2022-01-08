@@ -7,7 +7,14 @@
 - 소스 : https://github.com/alivetoday0/transaction-test
 
 ## 분석 
-### 1) MySql 설정 문제일까? 
+### 1) H2 설정 문제일까? 
+H2에서는 Serializable 테스트를 하지 못 한다. 
+
+## 해결
+MySQL을 도커로 설치 후 테스트 진행   
+하지만 DEADLOCK이 발생한다. 
+
+## 조사하다 안 사실 
 MySQL에서 Serializable 레벨을 사용하려면 auto commit이 false이어야 한다. 
 
 Spring은 
