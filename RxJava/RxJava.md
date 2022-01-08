@@ -52,3 +52,20 @@ Flowable에서 데이터를 전달하는 속도가 Subscriber에서 받는 속�
   - 이 후 버퍼가 비워지는 시점에 버려지지 않는 데이터부터 버퍼에 담는다.
 - [LATEST 전략](https://github.com/alivetoday0/rxjava-test/blob/master/src/main/java/com/alivetoday0/BackPressureLatestStrategy.java)
   - 대기 중인 데이터 중에서 가장 최근 데이터를 버퍼에 담는다.
+
+## Single
+- 데이터를 1건 혹은 에러를 전달한다.
+- onNext(), onComplete()가 없으며 대신 onSuccess()를 제공한다. 
+- singleObserver
+- 클라이언트의 요청에 대한 서버의 응답으로 사용한다.
+
+## Maybe
+- 데이터를 1건 전달 혹은 전달하지 않을 수 있다. 
+- 1건 전달 시 완료를 의미하여 완료 이벤트를 보내지 않늗다. 
+- 데이터 전달이 안 되었을 경우 완료를 통지한다. 
+- MaybeObserver
+- Maybe는 just와 empty 메소드를 제공한다. 
+
+## Completable
+- 데이터를 통지하지 않고 특정 작업이 완료 또는 에러를 통지한다. 
+- CompletableObserver
